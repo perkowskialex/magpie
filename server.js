@@ -3,9 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+let passport = require('passport');
+
+let session = require('express-session')
 
 require('dotenv').config()
 require('./config/database')
+require('./config/passport')
 
 var indexRouter = require('./routes/index');
 var budgetsRouter = require('./routes/budgets');
@@ -21,6 +25,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'magpiepiemag',
+  resave: false,
+  saveUninitialized: true
+}))
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/budgets', budgetsRouter);
