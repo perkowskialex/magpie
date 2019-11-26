@@ -1,5 +1,5 @@
 let passport = require('passport');
-let GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+let GoogleStrategy = require('passport-google-oauth20').Strategy;
 let User = require('../models/budget');
 
 passport.use(new GoogleStrategy({
@@ -8,12 +8,12 @@ passport.use(new GoogleStrategy({
         callbackURL: process.env.GOOGLE_CALLBACK
     },
     function (accessToken, refreshToken, profile, cb) {
-        User.findOne({googleId: profile.id}, function (err, user) {
+        User.findOne({'googleId': profile.id}, function (err, user) {
                 if (err) return cb(err);
                 if (user) {
                     return cb(null, user);
                 } else {
-                    let newUser = new User({
+                    const newUser = new User({
                         name: profile.displayName,
                         email: profile.emails[0].value,
                         googleId: profile.id
@@ -28,11 +28,11 @@ passport.use(new GoogleStrategy({
 ))
 
 passport.serializeUser(function(user, done){
-    done(null, user.id);
+    done(null, user);
 });
 
 passport.deserializeUser(function(id,done){
-    User.findByID(id,function(err,user){
+    User.findById(id,function(err,user){
         done(err, user);
     });
 });

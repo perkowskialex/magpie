@@ -1,11 +1,10 @@
 var express = require('express');
 var router = express.Router();
 let passport = require('passport');
+let indexCtrl = require('../controllers/index')
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Magpie' });
-});
+router.get('/', indexCtrl.index)
 
 //google auth login
 router.get('/auth/google', passport.authenticate(
