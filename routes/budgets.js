@@ -1,5 +1,5 @@
-var router = require('express').Router();
-var budgetsCtrl = require('../controllers/budgets');
+let router = require('express').Router();
+let budgetsCtrl = require('../controllers/budgets');
 
 router.get('/', budgetsCtrl.index);
 

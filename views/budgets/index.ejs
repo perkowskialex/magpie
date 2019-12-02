@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BUDGETS</title>
-</head>
-<body>
-    
-</body>
-</html>
+<%- include('../partials/header') %>
+<table id="list">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Income</th>
+            <th>Expenses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% budgets.forEach(function(b) { %>
+            <tr>
+              <td><%= b.name %></td>
+              <td><%= b.income %></td>
+              <td><a href="/movies/<%= b._id %>">View</a></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+
+<%- include('../partials/footer') %>
