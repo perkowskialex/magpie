@@ -1,4 +1,5 @@
 <%- include('../partials/header') %>
+<main>
 <table id="list">
         <thead>
           <tr>
@@ -19,7 +20,7 @@
             <% }); %>
           </tbody>
         </table>
-        <a href = '/expenses/new'><button class="btn waves-effect waves-light" type="submit" method= "POST" name="action">Add Expense
-                <i class="material-icons right">send</i>
-
+        <a href = '/:id/new/:budgetid'><button class="btn waves-effect waves-light" type="submit" method= "POST" name="action">Add Expense
+                <i class="material-icons right">send</i></button></a>
+  </main>
 <%- include('../partials/footer') %>

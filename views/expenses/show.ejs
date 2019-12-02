@@ -1,3 +1,28 @@
 <%- include('../partials/header') %>
 
-SHOW EXPENSE
+<table id="list">
+    <thead>
+      <tr>
+        <th>Date of Purchase:</th>
+        <th>Location:</th>
+        <th>Cost:</th>
+        <th>Description:</th>
+        <th>Method of Payment:</th>
+        <th>Category:</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= expense.date %></td>
+          <td><%= expense.location %></td>
+          <td><%= expense.value %></td>
+          <td><%= expense.description %></td>
+          <td><%= expense.method%></td>
+          <td><%= expense.category%></td>
+          <td>  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">remove</i></a>
+              </button></a></td>
+        </tr>
+      </tbody>
+    </table>
+
+<%- include('../partials/footer') %>

@@ -1,20 +1,32 @@
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
+let expenseSchema = new Schema({
+    value: {
+        type: Number,
+        required: true
+    },
+    category: String,
+    date: {
+        type: Date,
+        required: true,    
+        default: function () {
+            return new Date().getDate();
+      }},
+    location: String,
+    method: String,
+    description: String
+})
+
 let budgetSchema = new Schema({
-    id: String,
     income: Number,
     name: String,
-    expenses: {
-        type: Schema.Types.ObjectId,
-        ref: 'Expense'
-    }
+    expenses: [expenseSchema]
 }, {
     timestamps: true
 });
 
 let userSchema = new Schema({
-    id: String,
     googleId: String,
     email: String,
     name: String,
@@ -23,4 +35,5 @@ let userSchema = new Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('User', userSchema), mongoose.model('Budget', budgetSchema)
+
+module.exports = mongoose.model('User', userSchema), mongoose.model('Budget', budgetSchema), mongoose.model('Expense', expenseSchema)

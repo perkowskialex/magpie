@@ -1,5 +1,4 @@
 const User = require('../models/budget')
-const Expense = require('../models/expense')
 
 module.exports = {
     index,
@@ -16,6 +15,7 @@ function index(req, res, next) {
 function show(req,res){
     User.findById(req.params.id, function(err, user){
         console.log(user)
+        console.log(user.budget._id)
         res.render('budgets/show', {title: 'My Budget', user: req.user, expenses:user.budget})
     })
 }
