@@ -1,3 +1,35 @@
 <%- include('../partials/header') %>
 
-NEW EXPENSE
+<form id="new-form" action="/expenses" method="POST">
+    <label>Date:</label>
+    <input type="date" name="date">
+    <label>Value:</label>
+    <input type="number" name="value">
+    <label>Location</label>
+    <input type="text" name="location">
+    
+    <label>Category:</label>
+    <select class="browser-default" name="category">
+        <option value="rent">Rent</option>
+        <option value="utilities">Utilities</option>
+        <option value="transportation">Transportation</option>
+        <option value="groceries">Groceries</option>
+        <option value="subscription">Subscription</option>
+        <option value="health">Healthcare</option>
+        <option value="insurance">Insurance</option>
+        <option value="misc">Miscellaneous</option>
+    </select><br>
+
+    <label>Method:</label>
+    <select class="browser-default" name="method">
+        <option value="cash">Cash</option>
+        <option value="credit">Credit</option>
+        <option value="debit">Debit</option>
+        <option value="electronic">Electronic</option>
+        <option value="check">Check</option>
+    </select>
+    <label>Description:</label>
+    <input type="text" name="description">
+    <br>
+    <input type="submit" value="Add Expense">
+</form>

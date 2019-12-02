@@ -7,7 +7,7 @@ let expenseSchema = new Schema({
         type: Number,
         required: true
     },
-    type: String,
+    category: String,
     date: {
         type: Date,
         required: true,    
