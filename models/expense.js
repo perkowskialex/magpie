@@ -8,9 +8,15 @@ let expenseSchema = new Schema({
         required: true
     },
     type: String,
-    date: {type: Date, required: true},
+    date: {
+        type: Date,
+        required: true,    
+        default: function () {
+            return new Date().getDate();
+      }},
     location: String,
-    method: String
+    method: String,
+    description: String
 })
 
 module.exports = mongoose.model('Expense', expenseSchema)
