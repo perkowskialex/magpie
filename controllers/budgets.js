@@ -1,7 +1,8 @@
 const User = require('../models/budget')
 
 module.exports = {
-    index
+    index,
+    show
 }
 
 function index(req, res, next) {
@@ -9,4 +10,10 @@ function index(req, res, next) {
     User.find({}, function(err, budgets){
         res.render('budgets/index', {title:'Magpie Budget', user:req.user, budgets})
     })
+}
+
+function show(req, res) {
+    User.findById({}, function(err, budgets){
+    res.render('budgets/show', {title: 'My Budget', user: req.user, budgets})
+})
 }
