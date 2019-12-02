@@ -11,14 +11,11 @@
   <link rel="stylesheet" href="stylesheets/style.css" />
   <!-- JavaScript for Materialize -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
-
-<body>
-  <div class="navbar-fixed">
+</head>                    
       <nav>
         <div class="nav-wrapper">
-          <a href="" class="brand-logo left">M</a>
-          <ul class='right'>
+            <a href="/" class="brand-logo">M</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
             <% if (user) {%>
             <li><a href = "/budgets">Budget</a></li>
             <%}%>
@@ -32,6 +29,5 @@
           </ul>
         </div>
       </nav>
-    </div>
   <h1><%= title %></h1>
   <p>Welcome to <%= title %></p>
