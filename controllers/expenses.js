@@ -20,10 +20,10 @@ function create(req, res, next) {
 function show(req, res){
     Expense.findById(req.params.id, function(err, expense){
         console.log(expense)
-        res.render('/expenses/show', {title: 'Expense ' + req.params.id, user: req.user, expense})
+        res.render('/expenses/show', {title: 'Expense', user: req.user, expense})
     })
 }
 
 function newExpense(req, res) {
-    res.render('/expenses/new',{title: 'Add Expense'})
+    res.render('/expenses/new',{title: 'Add Expense', user: req.user})
 }
