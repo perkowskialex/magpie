@@ -23,12 +23,12 @@ function create(req, res, next) {
       }
       let budget = new Budget(req.body)
       User.findById(req.user._id, function(err,user){
-          user.budget.push(budget._id);
+          user.budgets.push(budget._id);
           user.save(function(err,user){
               if (err) return res.redirect('/budgets')
               res.redirect('/budgets')
           })
-          budget.save(function(err,newBud){
+          budget.save(function(err, newBudget){
               console.log('saved');
           })
       })
