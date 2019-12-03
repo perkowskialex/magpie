@@ -19,17 +19,17 @@ function create(req, res, next) {
       });
       user.save(function(err) {
         if (err) return res.redirect('budgets');
-        res.redirect('expenses/new/budgetid');
+        res.redirect('expenses/new');
       });
 }
 
 function show(req, res){
     Expense.findById(req.params.id, function(err, expense){
         // console.log(expense)
-        res.render(`expenses/show`, {title: 'Expense', user: req.user, expense})
+        res.render(`/expenses/show`, {title: 'Expense', user: req.user, expense})
     })
 }
 
 function newExpense(req, res) {
-    res.render(`expenses/new/`,{title: 'Add Expense', user: req.user})
+    res.render('expenses/new',{title: 'Add Expense', user: req.user})
 }
