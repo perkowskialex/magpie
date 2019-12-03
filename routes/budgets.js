@@ -1,6 +1,8 @@
 let router = require('express').Router();
 let budgetsCtrl = require('../controllers/budgets');
 
+router.use(isLoggedIn);
+
 router.get('/', budgetsCtrl.index);
 router.get('/new',budgetsCtrl.new)
 router.get('/:id', budgetsCtrl.show)
