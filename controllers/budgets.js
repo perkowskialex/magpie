@@ -13,7 +13,6 @@ function index(req, res, next) {
     res.render('budgets/index', {
         title: 'Magpie Budget',
         user: req.user,
-        budgets: req.user.budgets
     });
 }
 

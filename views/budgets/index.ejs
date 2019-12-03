@@ -13,8 +13,7 @@
           </tr>
         </thead>
         <tbody>
-          <% if (budgets.length > 0) { %>
-          <% budgets.forEach(function(b) { %>
+          <% user.budgets.forEach(function(b) { %>
             <tr>
               <td><%= b.name %></td>
               <td><%= b.budgetName%></td>
@@ -24,9 +23,6 @@
                   </button></a></td>
             </tr>
             <% }); %>
-            <% } else { %>
-              No budgets found.
-              <% } %>
           </tbody>
         </table>
   </main>
