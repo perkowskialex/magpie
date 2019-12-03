@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 <main>
-  <a href='/expenses/new/'><button method="POST" class="btn waves-effect waves-light" type="submit" name="action">Add
+  <a href='/budgets/<%=budget.id%>/expenses/new/'><button method="POST" class="btn waves-effect waves-light" type="submit" name="action">Add
       Expense
       <i class="material-icons right">send</i></button></a>
 
@@ -13,7 +13,8 @@
       </tr>
     </thead>
     <tbody>
-      <% user.forEach(function(e) { %>
+      <% if (budget.expenses.length > 0) { %>
+      <% budget.expenses.forEach(function(e) { %>
       <tr>
         <td><%= e.name %></td>
         <td><%= e.value %></td>
@@ -24,6 +25,9 @@
             </button></a></td>
       </tr>
       <% }); %>
+      <% } else { %>
+        <h3>No expenses found.</h3>
+        <% } %>
     </tbody>
   </table>
 </main>

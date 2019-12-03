@@ -42,12 +42,11 @@ function newBudget(req, res) {
 }
 
 function show(req, res) {
-    User.findById(req.params.id, function (err, user) {
-        // console.log(user)
-        // console.log(user.budget._id)
+    Budget.findById(req.params.id).exec((err, budget) => {
         res.render('budgets/show', {
             title: 'My Budget',
-            user: req.user,
+            budget,
+            user: req.user
         })
     })
 }
