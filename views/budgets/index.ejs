@@ -3,7 +3,7 @@
   <a href="/budgets/new"> <button class="btn waves-effect waves-light" type="submit" name="action">Create a Budget
       <i class="material-icons right">send</i>
     </button></a>
-  <table id="list">
+  <table id="list ">
     <thead>
       <tr>
         <th>User</th>
@@ -26,10 +26,11 @@
               <i class="material-icons right">send</i>
             </button></a></td>
         <td>Update Budget here</td>
-        <td><a href="/budgets/<%= b._id %>?_method=DELETE"> <i class="material-icons"></i><button
-              class="btn-floating btn-large waves-effect waves-light red" type="submit" name="action">
-              <i class="material-icons right">delete</i>
-            </button></a></td>
+        <td>
+          <form action="/budgets/<%=b._id%>?_method=DELETE" class="delete-form" method="POST">
+            <button type="submit" class='danger'>X</button>
+          </form>
+        </td>
       </tr>
       <% }); %>
       <% } else { %>

@@ -6,18 +6,19 @@ module.exports = {
     index,
     show,
     new: newBudget,
-    create
+    create,
+    delete: deleteBudget
 }
 
 function index(req, res, next) {
     User.findById(req.user._id)
-    .populate('budgets')
-    .exec(function(err,user){
-        res.render('budgets/index', {
-            title: 'Magpie Budget',
-            user,
-        });
-    })
+        .populate('budgets')
+        .exec(function (err, user) {
+            res.render('budgets/index', {
+                title: 'Magpie Budget',
+                user,
+            });
+        })
 }
 
 function create(req, res, next) {
@@ -54,4 +55,10 @@ function show(req, res) {
             user: req.user
         })
     })
+}
+
+function deleteBudget(req, res) {
+    Budget.findByIdAndDelete(req.params.id, function (err, budget) {
+            res.redirect('/budgets')
+        });
 }

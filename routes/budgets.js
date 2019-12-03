@@ -7,6 +7,7 @@ router.get('/', budgetsCtrl.index);
 router.get('/new',budgetsCtrl.new)
 router.get('/:id', budgetsCtrl.show)
 router.post('/', budgetsCtrl.create)
+router.delete('/:id', budgetsCtrl.delete)
 
 function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();
