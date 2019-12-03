@@ -10,10 +10,10 @@ module.exports = {
 }
 
 function index(req, res, next) {
-    User.findById(req.params.id).populate('budget')
         res.render('budgets/index', {
             title:'Magpie Budget',
-            user: req.user.budget
+            user: req.user,
+            budgets: req.user.budgets
         });
 }
 

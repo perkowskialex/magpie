@@ -5,7 +5,7 @@ let userSchema = new Schema({
     googleId: String,
     email: String,
     name: String,
-    budget: [{
+    budgets: [{
         type: Schema.Types.ObjectId,
         ref: 'Budget'
     }]
