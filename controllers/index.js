@@ -1,5 +1,5 @@
 // let request = require('request');
-const User = require('../models/budget')
+const User = require('../models/user')
 
 module.exports = {
     index

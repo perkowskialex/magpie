@@ -1,4 +1,6 @@
-const User = require('../models/budget')
+const User = require('../models/user')
+const Budget = require('../models/budget')
+const Expense = require('../models/expense')
 // console.log(Object.keys(User.schema.paths));
 
 module.exports = {
@@ -23,11 +25,13 @@ function create(req, res, next) {
 
 function show(req, res){
     User.findById(req.params.id, function(err, expense){
-        console.log(expense)
-        res.render(`expenses/show/:budgetid`, {title: 'Expense', user: req.user, expense})
+        // console.log(expense)
+        res.render(`expenses/show`, {title: 'Expense', user: req.user, expense})
     })
 }
 
 function newExpense(req, res) {
-    res.render('expenses/new/:budgetid',{title: 'Add Expense', user: req.user})
+    //pass it in here
+    let budgetId = req.params.budgetid
+    res.render(`expenses/new/${budgetId}`,{title: 'Add Expense', user: req.user})
 }
