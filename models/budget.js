@@ -3,7 +3,6 @@ let Schema = mongoose.Schema;
 
 let budgetSchema = new Schema({
     income: Number,
-    name: String,
     budgetName: String,
     expenses: [{
         type: Schema.Types.ObjectId,

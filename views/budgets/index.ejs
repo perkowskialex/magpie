@@ -1,33 +1,41 @@
 <%- include('../partials/header') %>
 <main>
-    <a href="/budgets/new"> <button class="btn waves-effect waves-light" type="submit" name="action">Create a Budget
-        <i class="material-icons right">send</i>
-      </button></a>
-<table id="list">
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>Budget Name</th>
-            <th>Income</th>
-            <th>Expenses</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% if (user.budgets.length > 0) { %>
-          <% user.budgets.forEach(function(b) { %>
-            <tr>
-              <td><%= b.name %></td>
-              <td><%= b.budgetName%></td>
-              <td><%= b.income %></td>
-              <td><a href="/budgets/<%= b._id %>"> <button class="btn waves-effect waves-light" type="submit" name="action">View
-                    <i class="material-icons right">send</i>
-                  </button></a></td>
-            </tr>
-            <% }); %>
-            <% } else { %>
-              No budgets found.
-              <% } %>
-          </tbody>
-        </table>
-  </main>
+  <a href="/budgets/new"> <button class="btn waves-effect waves-light" type="submit" name="action">Create a Budget
+      <i class="material-icons right">send</i>
+    </button></a>
+  <table id="list">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Budget Name</th>
+        <th>Income</th>
+        <th>View Expenses</th>
+        <th>Update</th>
+        <th>Delete Budget?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (user.budgets.length > 0) { %>
+      <tr>
+        <% user.budgets.forEach(function(b) { %>
+        <td><%=user.name%></td>
+        <td><%=b.budgetName%></td>
+        <td><%=b.income%></td>
+        <td><a href="/budgets/<%= b._id %>"> <button class="btn waves-effect waves-light" type="submit"
+              name="action">View
+              <i class="material-icons right">send</i>
+            </button></a></td>
+        <td>Update Budget here</td>
+        <td><a href="/budgets/<%= b._id %>?_method=DELETE"> <i class="material-icons"></i><button
+              class="btn-floating btn-large waves-effect waves-light red" type="submit" name="action">
+              <i class="material-icons right">delete</i>
+            </button></a></td>
+      </tr>
+      <% }); %>
+      <% } else { %>
+      No budgets found.
+      <% } %>
+    </tbody>
+  </table>
+</main>
 <%- include('../partials/footer') %>

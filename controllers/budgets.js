@@ -10,16 +10,21 @@ module.exports = {
 }
 
 function index(req, res, next) {
-    res.render('budgets/index', {
-        title: 'Magpie Budget',
-        user: req.user,
-    });
+    User.findById(req.user._id)
+    .populate('budgets')
+    .exec(function(err,user){
+        res.render('budgets/index', {
+            title: 'Magpie Budget',
+            user,
+        });
+    })
 }
 
 function create(req, res, next) {
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }
+    console.log(req.body)
     let budget = new Budget(req.body)
     let user = req.user;
     user.budgets.push(budget._id);
