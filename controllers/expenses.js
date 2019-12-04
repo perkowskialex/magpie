@@ -1,12 +1,17 @@
 const User = require('../models/user')
 const Budget = require('../models/budget')
 const Expense = require('../models/expense')
+var moment = require('moment');
+
 
 module.exports = {
     create,
     new: newExpense,
     show,
-    index
+    index,
+    edit,
+    delete: deleteExpense,
+    update: updateExpense
 }
 
 function index(req, res, next) {
@@ -56,7 +61,26 @@ function newExpense(req, res) {
         res.render('expenses/new', {
             title: 'Add Expense',
             user: req.user,
-            budget 
+            budget,
+            moment 
         })
     })
+}
+
+function edit(req,res){
+    Expense.findById(req.params.id, function(err,expense) {
+        res.render('expenses/edit', {
+            user: req.user,
+            expense,
+            title: 'Edit Expense'
+        })
+    })
+}
+
+function deleteExpense(req,res){
+
+}
+
+function updateExpense(req,res){
+
 }

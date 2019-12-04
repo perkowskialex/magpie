@@ -6,6 +6,8 @@ let logger = require('morgan');
 let passport = require('passport');
 let session = require('express-session')
 let methodOverride = require('method-override');
+var moment = require('moment');
+moment().format();
 
 require('dotenv').config()
 require('./config/database')

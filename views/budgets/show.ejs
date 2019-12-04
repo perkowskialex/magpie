@@ -8,7 +8,13 @@
       <tr>
         <th>Date</th>
         <th>Value</th>
+        <th>Location</th>
         <th>Description</th>
+        <th>Category</th>
+        <th>Method</th>
+        <th></th>
+        <th>Update Expense</th>
+        <th>Delete Expense</th>
       </tr>
     </thead>
     <tbody>
@@ -17,11 +23,23 @@
       <tr>
         <td><%= e.date %></td>
         <td><%= e.value %></td>
+        <td><%= e.location %></td>
         <td><%= e.description %></td>
-        <td><a href="/<%= e.id %>"> <button class="btn waves-effect waves-light" type="submit" name="action">View
+        <td><%= e.category %></td>
+        <td><%= e.method %></td>
+        <td><a href="/expenses/<%= e.id %>"> <button class="btn waves-effect waves-light" type="submit" name="action">View
               Expense
               <i class="material-icons right">send</i>
             </button></a></td>
+            <td>
+              <form action="/expenses/<%=e._id%>/edit" method="GET"> 
+              <button class="btn-floating btn-large waves-effect btn-large yellow"><i class="large material-icons">mode_edit</i></button></a></form>
+          </td>
+          <td>
+            <form action="/expenses/<%=e._id%>?_method=DELETE" class="delete-form" method="POST">
+              <button class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></button>
+            </form>
+          </td>
       </tr>
       <% }); %>
       <% } else { %>
