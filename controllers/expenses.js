@@ -26,7 +26,7 @@ function create(req, res, next) {
         if (req.body[key] === '') delete req.body[key];
     }
     let expense = req.body;
-    Budget.findById(req.params.id, function (err, budget) {
+    Budget.findById(req.params.id).exec(function (err, budget) {
         budget.expenses.push(expense);
         budget.save(function (err) {
             if (err) return res.redirect(`error`);
