@@ -3,13 +3,11 @@ let Schema = mongoose.Schema;
 
 let expenseSchema = new Schema({
     value: {
-        type: Number,
-        required: true
+        type: String,
     },
     category: String,
     date: {
         type: Date,
-        required: true,    
         default: function () {
             return new Date().getDate();
       }},
