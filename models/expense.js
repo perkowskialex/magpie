@@ -10,7 +10,8 @@ let expenseSchema = new Schema({
         type: Date,
         default: function () {
             return new Date().getDate();
-      }},
+      }
+    },
     location: String,
     method: String,
     description: String

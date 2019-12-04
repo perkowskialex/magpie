@@ -15,7 +15,7 @@
       <% if (budget.expenses.length > 0) { %>
       <% budget.expenses.forEach(function(e) { %>
       <tr>
-        <td><%= e.name %></td>
+        <td><%= e.date %></td>
         <td><%= e.value %></td>
         <td><%= e.description %></td>
         <td><a href="/<%= e.id %>"> <button class="btn waves-effect waves-light" type="submit" name="action">View

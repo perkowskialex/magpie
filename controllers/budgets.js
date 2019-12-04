@@ -41,8 +41,8 @@ function create(req, res, next) {
     })
 }
 
-function edit (req, res) {
-    Budget.findById(req.params.id, function(err, budget){
+function edit(req, res) {
+    Budget.findById(req.params.id, function (err, budget) {
         res.render('budgets/edit', {
             user: req.user,
             budget,
@@ -51,11 +51,11 @@ function edit (req, res) {
     })
 }
 
-function update (req,res) {
-    Budget.findById(req.params.id, function(err, budget) {
+function update(req, res) {
+    Budget.findById(req.params.id, function (err, budget) {
         budget.budgetName = req.body.budgetName
         budget.income = req.body.income
-        budget.save(function(err){
+        budget.save(function (err) {
             if (err) return res.render('/error');
             res.render(`budgets/`, {
                 user: req.user,
@@ -65,7 +65,7 @@ function update (req,res) {
         })
     })
 }
-    
+
 
 function newBudget(req, res) {
     User.findById(req.params.id, function (err, user) {
@@ -77,18 +77,22 @@ function newBudget(req, res) {
 }
 
 function show(req, res) {
-    Budget.findById(req.params.id).populate('expenses').exec((err, budget) => {
-        res.render('budgets/show', {
-            title: 'My Budget',
-            budget,
-            user: req.user,
-            expense: budget.expenses
+    console.log('running budgets show')
+    Budget.findById(req.params.id)
+        .populate('expenses')
+        .exec((err, budget) => {
+            console.log('show budgets function params.id: ' + req.params.id)
+            console.log('show budget is: ' + budget)
+            res.render('budgets/show', {
+                title: 'My Budget',
+                budget,
+                user: req.user,
+            })
         })
-    })
 }
 
 function deleteBudget(req, res) {
     Budget.findByIdAndDelete(req.params.id, function (err, budget) {
-            res.redirect('/budgets')
-        });
+        res.redirect('/budgets')
+    });
 }
