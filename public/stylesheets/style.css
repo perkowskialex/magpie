@@ -9,6 +9,12 @@ body {
   background-color: lightcyan;
 }
 
+.magpie-image {
+  width: 20%;
+  height: 20%;
+  display: flex;
+}
+
 a {
   color: #00B7FF;
 }
