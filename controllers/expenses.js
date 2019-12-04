@@ -13,7 +13,8 @@ function index(req, res, next) {
     Budget.findById(req.budget._id).populate('expenses').exec(function (err, budget) {
         res.render('expenses/index', {
             title: 'Expense',
-            budget
+            budget,
+            expense: budget.expenses
         })
     })
 }

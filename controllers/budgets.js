@@ -12,6 +12,7 @@ module.exports = {
     update
 }
 
+
 function index(req, res, next) {
     User.findById(req.user._id)
         .populate('budgets')
@@ -76,7 +77,7 @@ function newBudget(req, res) {
 }
 
 function show(req, res) {
-    Budget.findById(req.params.id).exec((err, budget) => {
+    Budget.findById(req.params.id).populate('expenses').exec((err, budget) => {
         res.render('budgets/show', {
             title: 'My Budget',
             budget,
