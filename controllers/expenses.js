@@ -11,7 +11,7 @@ module.exports = {
     index,
     edit,
     delete: deleteExpense,
-    update: updateExpense
+    update
 }
 
 function index(req, res, next) {
@@ -78,9 +78,26 @@ function edit(req,res){
 }
 
 function deleteExpense(req,res){
-
+    Expense.findByIdAndDelete(req.params.id, function(err, x){
+        res.redirect('/budgets')
+    })
 }
 
-function updateExpense(req,res){
-
+function update(req,res){
+    Expense.findById(req.params.id, function(err,expense){
+        expense.date = req.body.date;
+        expense.description = req.body.description;
+        expense.value = req.body.value;
+        expense.category = req.body.category;
+        expense.method = req.body.method;
+        expense.location = req.body.location
+        expense.save(function (err){
+            if (err) return res.redner('/error');
+            res.render('/budgets/', {
+                user: req.user,
+                expense,
+                title: 'My Budget'
+            })
+        })
+    })
 }
