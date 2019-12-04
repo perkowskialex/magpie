@@ -38,6 +38,21 @@ function create(req, res, next) {
     })
 }
 
+function createExpenses(req, res, next) {
+    console.log('expenses CREATE function')
+    for (let key in req.body) {
+        if (req.body[key] === '') delete req.body[key];
+    }
+      let expense = req.body;
+      Budget.findById(req.params.id, function(err,budget){
+          budget.expenses.push(expense);
+          budget.save(function(err) {
+            if (err) return res.redirect(`error`);
+            res.redirect(`budgets/show`);
+          });
+      });   
+}
+
 function newBudget(req, res) {
     User.findById(req.params.id, function (err, user) {
         res.render('budgets/new', {

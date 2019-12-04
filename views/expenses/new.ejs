@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <main>
-<form id="new-form" action="expenses/show" method="POST">
+<form id="new-form" action="/budgets/<%=budget._id%>" method="POST">
     <label>Date:</label>
     <input type="date" name="date">
     <label>Value:</label>
@@ -35,3 +35,5 @@
     <input type="submit" value="Add Expense">
 </form>
 </main>
+
+<%- include('../partials/footer') %>

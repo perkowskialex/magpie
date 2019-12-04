@@ -19,7 +19,7 @@ function index(req,res,next) {
 }
 
 function create(req, res, next) {
-    console.log('expenses create function')
+    console.log('expenses CREATE function')
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }
@@ -27,7 +27,7 @@ function create(req, res, next) {
       Budget.findById(req.params.id, function(err,budget){
           budget.expenses.push(expense);
           budget.save(function(err) {
-            if (err) return res.redirect(`/budgets/show`);
+            if (err) return res.redirect(`error`);
             res.redirect(`budgets/show`);
           });
       });   
@@ -44,6 +44,6 @@ function show(req, res){
 function newExpense(req, res) {
     console.log('expenses NEW func')
     Budget.findById(req.params.id, function(err, budget){
-        res.render('expenses/new', {title: 'New Expense', user:req.user, budget})
+        res.render('expenses/new', {title: 'Add Expense', user: req.user, budget})
     })
 }
