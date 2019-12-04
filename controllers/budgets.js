@@ -7,7 +7,9 @@ module.exports = {
     show,
     new: newBudget,
     create,
-    delete: deleteBudget
+    delete: deleteBudget,
+    edit,
+    update
 }
 
 function index(req, res, next) {
@@ -38,20 +40,31 @@ function create(req, res, next) {
     })
 }
 
-function createExpenses(req, res, next) {
-    console.log('expenses CREATE function')
-    for (let key in req.body) {
-        if (req.body[key] === '') delete req.body[key];
-    }
-      let expense = req.body;
-      Budget.findById(req.params.id, function(err,budget){
-          budget.expenses.push(expense);
-          budget.save(function(err) {
-            if (err) return res.redirect(`error`);
-            res.redirect(`budgets/show`);
-          });
-      });   
+function edit (req, res) {
+    Budget.findById(req.params.id, function(err, budget){
+        res.render('budgets/edit', {
+            user: req.user,
+            budget,
+            title: 'Edit Budget'
+        })
+    })
 }
+
+function update (req,res) {
+    Budget.findById(req.params.id, function(err, budget) {
+        budget.budgetName = req.body.budgetName
+        budget.income = req.body.income
+        budget.save(function(err){
+            if (err) return res.render('/error');
+            res.render(`budgets/`, {
+                user: req.user,
+                budget,
+                title: 'My Budget'
+            });
+        })
+    })
+}
+    
 
 function newBudget(req, res) {
     User.findById(req.params.id, function (err, user) {

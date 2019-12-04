@@ -6,12 +6,18 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: lightcyan;
+  background-color: lightsalmon;
 }
 
 .magpie-image {
   width: 20%;
   height: 20%;
+  display: flex;
+}
+
+.magpie-logo {
+  width: 8%;
+  height: 8%;
   display: flex;
 }
 

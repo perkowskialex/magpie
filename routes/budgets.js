@@ -8,6 +8,8 @@ router.get('/new',budgetsCtrl.new)
 router.get('/:id', budgetsCtrl.show)
 router.post('/', budgetsCtrl.create)
 router.delete('/:id', budgetsCtrl.delete)
+router.put('/:id', budgetsCtrl.update)
+router.get('/:id/edit', budgetsCtrl.edit);
 
 function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();

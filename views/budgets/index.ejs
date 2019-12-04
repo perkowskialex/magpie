@@ -25,7 +25,10 @@
               name="action">View
               <i class="material-icons right">send</i>
             </button></a></td>
-        <td>Update Budget here</td>
+        <td>
+            <form action="/budgets/<%=b._id%>/edit" method="GET"> 
+            <button class="btn-floating btn-large waves-effect btn-large yellow"><i class="large material-icons">mode_edit</i></button></a></form>
+        </td>
         <td>
           <form action="/budgets/<%=b._id%>?_method=DELETE" class="delete-form" method="POST">
             <button class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></button>
