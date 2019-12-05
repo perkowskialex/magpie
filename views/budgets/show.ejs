@@ -1,9 +1,9 @@
 <%- include('../partials/header') %>
 <main>
   <br>
-  <h3 class="white-text">View Expenses</h4>
+  <h3 class="blue-text text-darken-3">View Expenses</h3>
     <br>
-  <table id="list" class="white-text highlight">
+  <table id="list" class="blue-text text-darken-3 highlight">
     <thead>
       <tr>
         <th>Date</th>
@@ -42,10 +42,11 @@
       </tr>
       <% }); %>
       <% } else { %>
-      <h3>No expenses found.</h3>
       <% } %>
     </tbody>
   </table>
+  <h3 class ="black-text text-darken-3">No expenses found.</h3>
+
 <br>
 <div class = 'add-expense'>
   <a href='<%=budget._id%>/expenses/new/'><button class="btn-large waves-effect waves-light pulse" class='add-expense' type="submit" name="action">Add
