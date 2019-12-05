@@ -2,9 +2,7 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let expenseSchema = new Schema({
-    value: {
-        type: String,
-    },
+    value: String,
     category: String,
     date: {
         type: Date,

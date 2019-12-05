@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 <main>
+  <h3><%=expense.description%></h3>
 <table class= ''id="list">
     <thead>
       <tr>
@@ -13,7 +14,7 @@
     </thead>
     <tbody>
         <tr>
-          <td><%= expense.date %></td>
+        <td><%=moment(expense.date).format("L")%></td>
           <td><%= expense.location %></td>
           <td><%= expense.value %></td>
           <td><%= expense.description %></td>

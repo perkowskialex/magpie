@@ -45,7 +45,9 @@
       <% } %>
     </tbody>
   </table>
+  <% if (budget.expenses.length === 0) { %>
   <h3 class ="black-text text-darken-3">No expenses found.</h3>
+  <% } %>
 
 <br>
 <div class = 'add-expense'>

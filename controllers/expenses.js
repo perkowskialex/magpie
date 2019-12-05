@@ -52,7 +52,8 @@ function show(req, res) {
         res.render('expenses/show', {
             title: 'My Expense',
             expense,
-            user: req.user
+            user: req.user,
+            moment
         })
     })
 }
