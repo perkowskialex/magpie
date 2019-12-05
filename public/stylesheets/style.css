@@ -8,6 +8,24 @@ h3 {
   text-align: center;
 }
 
+label, input {
+  color: white;
+  font-size: 250%;
+  margin: 1%;
+  padding: 1%
+}
+
+.submitter {
+  color: whitesmoke;
+  background-color: seagreen;
+  border-radius: 5%;
+  border: 0px;
+}
+
+input {
+  font-weight: bold;
+}
+
 .add-expense {
   display: flex;
   justify-content: center;

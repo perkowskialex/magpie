@@ -91,10 +91,10 @@ function update(req,res){
         expense.value = req.body.value;
         expense.category = req.body.category;
         expense.method = req.body.method;
-        expense.location = req.body.location
+        expense.location = req.body.location;
         expense.save(function (err){
-            if (err) return res.redner('/error');
-            res.render('/budgets/', {
+            if (err) return res.render('/error');
+            res.render('budgets/show', {
                 user: req.user,
                 budget: req.budget,
                 expense,

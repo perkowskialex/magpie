@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 <main>
-    <form id="new-form" action="/budgets/<%=budget._id%>" method="POST">
+    <form id="new-form"  action="/expenses/<%=expense._id%>" method="POST">
         <label>Date:</label>
         <input type="date" name="date">
         <br>
@@ -39,7 +39,7 @@
         <label>Description:</label>
         <input type="text" name="description">
         <br>
-        <input type="submit" value="Add Expense">
+        <input class="submitter" type="submit" value="Add Expense">
         <br>
     </form>
 </main>

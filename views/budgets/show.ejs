@@ -14,7 +14,7 @@
         <th>Method</th>
         <th>Update Expense</th>
         <th>Delete Expense</th>
-        <th></th>
+        <th>View</th>
       </tr>
     </thead>
     <tbody>
@@ -29,15 +29,15 @@
         <td><%= e.method %></td>
             <td>
               <form action="/expenses/<%=e._id%>/edit" method="GET"> 
-              <button class="btn-floating btn-large waves-effect btn-large yellow"><i class="large material-icons">mode_edit</i></button></a></form>
+              <button class="btn-floating  waves-effect yellow"><i class="large material-icons">mode_edit</i></button></a></form>
           </td>
           <td>
             <form action="/expenses/<%=e._id%>?_method=DELETE" class="delete-form" method="POST">
-              <button class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></button>
+              <button class="btn-floating waves-effect waves-light red"><i class="material-icons">delete</i></button>
             </form>
           </td>
           <td><a href="/expenses/<%= e.id %>"> <button class="btn-floating waves-effect waves-light" type="submit" name="action">
-              <i class="material-icons right">send</i>
+              <i class="material-icons right">visibility</i>
             </button></a></td>
       </tr>
       <% }); %>
@@ -48,7 +48,7 @@
   </table>
 <br>
 <div class = 'add-expense'>
-  <a href='<%=budget._id%>/expenses/new/'><button class="btn waves-effect waves-light pulse" class='add-expense' type="submit" name="action">Add
+  <a href='<%=budget._id%>/expenses/new/'><button class="btn-large waves-effect waves-light pulse" class='add-expense' type="submit" name="action">Add
     Expense <i class="material-icons right">add</i></button></a>
     <br>
   </div>
