@@ -2,11 +2,9 @@
 
 <main>
     <h3 class='blue-text text-darken-3'>Please Log In to Continue</h3>
-    <div class="row valign-wrapper">
-    <div class='col s12'>
-        <img class='magpie-image' src="https://i.imgur.com/Je6D7O7.jpg" alt="Indonesian Magpie"><br></div></div>
-        <div class = 'row valign-wrapper'>
-        <div class = 'col s12'>
+    <br>
+    <div class = 'center-index'>
+        <img class='magpie-image' src="https://i.imgur.com/Je6D7O7.jpg" alt="Indonesian Magpie"><br><br>    
         <% if (user) {%>
         <a href='/budgets'><button class="btn-large waves-effect waves-light pulse" class='add-expense' type="submit"
                 name="action">Take me to my Budgets<i class="material-icons right">visibility</i></button></a>
@@ -14,7 +12,6 @@
         <a href='/auth/google'><button class="btn-large waves-effect waves-light pulse" class='add-expense' type="submit"
                 name="action">Login with Google<i class="material-icons right">lock</i></button></a>
         <% } %>
-    </div>
     </div>
 </main>
 
