@@ -34,4 +34,12 @@ body {
 main {
   flex: 1 0 auto;
 }
-    
+
+thead {
+  font-size: 120%;
+}
+
+th,td,tr { 
+  text-align: center;
+  font-size: 110%;
+}

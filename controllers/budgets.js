@@ -1,6 +1,7 @@
 const User = require('../models/user')
 const Expense = require('../models/expense')
 const Budget = require('../models/budget')
+let moment = require('moment')
 
 module.exports = {
     index,
@@ -87,6 +88,7 @@ function show(req, res) {
                 title: 'My Budget',
                 budget,
                 user: req.user,
+                moment:moment
             })
         })
 }

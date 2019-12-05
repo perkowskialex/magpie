@@ -1,1 +1,47 @@
-expense edit placeholder 
+<%- include('../partials/header') %>
+<main>
+    <form id="new-form" action="/budgets/<%=budget._id%>" method="POST">
+        <label>Date:</label>
+        <input type="date" name="date">
+        <br>
+        <label>Value:</label>
+        <input type="number" name="value">
+        <br>
+        <label>Location</label>
+        <input type="text" name="location">
+        <br>
+
+        <label>Category:</label>
+
+        <select class="browser-default" name="category">
+            <option value="rent">Rent</option>
+            <option value="utilities">Utilities</option>
+            <option value="transportation">Transportation</option>
+            <option value="groceries">Groceries</option>
+            <option value="subscription">Subscription</option>
+            <option value="health">Healthcare</option>
+            <option value="insurance">Insurance</option>
+            <option value="misc">Miscellaneous</option>
+        </select><br>
+        <br>
+
+        <label>Method:</label>
+
+        <select class="browser-default" name="method">
+            <option value="cash">Cash</option>
+            <option value="credit">Credit</option>
+            <option value="debit">Debit</option>
+            <option value="electronic">Electronic</option>
+            <option value="check">Check</option>
+        </select>
+        <br>
+
+        <label>Description:</label>
+        <input type="text" name="description">
+        <br>
+        <input type="submit" value="Add Expense">
+        <br>
+    </form>
+</main>
+
+<%- include('../partials/footer') %>

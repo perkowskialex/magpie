@@ -3,15 +3,15 @@
   <a href="/budgets/new"> <button class="btn waves-effect waves-light" type="submit" name="action">Create a Budget
       <i class="material-icons right">send</i>
     </button></a>
-  <table id="list ">
+  <table id="list" class='white-text highlight'>
     <thead>
       <tr>
         <th>User</th>
         <th>Budget Name</th>
         <th>Income</th>
-        <th>View Expenses</th>
         <th>Update</th>
         <th>Delete Budget?</th>
+        <th>View Expenses</th>
       </tr>
     </thead>
     <tbody>
@@ -21,10 +21,6 @@
         <td><%=user.name%></td>
         <td><%=b.budgetName%></td>
         <td><%=b.income%></td>
-        <td><a href="/budgets/<%= b._id %>"> <button class="btn waves-effect waves-light" type="submit"
-              name="action">View
-              <i class="material-icons right">send</i>
-            </button></a></td>
         <td>
             <form action="/budgets/<%=b._id%>/edit" method="GET"> 
             <button class="btn-floating btn-large waves-effect btn-large yellow"><i class="large material-icons">mode_edit</i></button></a></form>
@@ -34,6 +30,10 @@
             <button class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></button>
           </form>
         </td>
+        <td><a href="/budgets/<%= b._id %>"> <button class="btn waves-effect waves-light" type="submit"
+              name="action">View
+              <i class="material-icons right">send</i>
+            </button></a></td>
       </tr>
       <% }); %>
       <% } else { %>

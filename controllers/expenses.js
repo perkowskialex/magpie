@@ -49,7 +49,7 @@ function show(req, res) {
     console.log('expenses SHOW func')
     Expense.findById(req.params.id, function (err, expense) {
         // console.log(expense)
-        res.redirect(`/budgets/show`)
+        res.redirect(`/expenses/${expense._id}`)
     })
 }
 
@@ -95,6 +95,7 @@ function update(req,res){
             if (err) return res.redner('/error');
             res.render('/budgets/', {
                 user: req.user,
+                budget: req.budget,
                 expense,
                 title: 'My Budget'
             })
