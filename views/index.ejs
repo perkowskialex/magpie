@@ -1,8 +1,21 @@
 <%- include('./partials/header') %>
 
 <main>
-    <h3>Please Log In to Continue</h3>
-    <img class='magpie-image' src="https://i.imgur.com/Je6D7O7.jpg" alt="Indonesian Magpie">
+    <h3 class='white-text'>Please Log In to Continue</h3>
+    <div class="row valign-wrapper">
+    <div class='col s12'>
+        <img class='magpie-image' src="https://i.imgur.com/Je6D7O7.jpg" alt="Indonesian Magpie"><br></div></div>
+        <div class = 'row valign-wrapper'>
+        <div class = 'col s12'>
+        <% if (user) {%>
+        <a href='/budgets'><button class="btn waves-effect waves-light pulse" class='add-expense' type="submit"
+                name="action">Take me to my Budgets<i class="material-icons right">send</i></button></a>
+        <% } else { %>
+        <a href='/auth/google'><button class="btn waves-effect waves-light pulse" class='add-expense' type="submit"
+                name="action">Login with Google<i class="material-icons right">vpn_key</i></button></a>
+        <% } %>
+    </div>
+    </div>
 </main>
 
 <%- include('./partials/footer') %>

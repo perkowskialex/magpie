@@ -4,6 +4,7 @@
 <head>
   <title><%= title %></title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet">
   <!-- Google Icon Fonts used by Materialize -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Materialize CSS Framework -->
@@ -14,7 +15,8 @@
 </head>                    
       <nav>
         <div class="nav-wrapper blue lighten-1">
-            <a href="/" class="brand-logo"><img src="https://i.imgur.com/vzxr7CB.png" class = 'magpie-logo' alt="magpie-logo"></a>
+            <div class = "logo">
+            <a href="/" class="brand-logo"><img src="https://i.imgur.com/vzxr7CB.png" class = 'magpie-logo' alt="magpie-logo"></a></div>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
             <% if (user) {%>
             <li><a href = "/budgets">My Budgets</a></li>

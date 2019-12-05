@@ -1,10 +1,20 @@
 * {
+  font-family: 'Alatsi', sans-serif;
   margin: 0;
   box-sizing: border-box;
 }
 
+h3 {
+  text-align: center;
+}
+
+.add-expense {
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: lightsalmon;
 }
@@ -12,7 +22,11 @@ body {
 .magpie-image {
   width: 20%;
   height: 20%;
+}
+
+.logo {
   display: flex;
+  align-content: center;
 }
 
 .magpie-logo {
@@ -36,7 +50,7 @@ main {
 }
 
 thead {
-  font-size: 120%;
+  font-size: 130%;
 }
 
 th,td,tr { 

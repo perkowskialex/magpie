@@ -69,6 +69,7 @@ function newExpense(req, res) {
 
 function edit(req,res){
     Expense.findById(req.params.id, function(err,expense) {
+        console.log(expense);
         res.render('expenses/edit', {
             user: req.user,
             expense,

@@ -1,9 +1,10 @@
 <%- include('../partials/header') %>
 <main>
-  <a href="/budgets/new"> <button class="btn waves-effect waves-light" type="submit" name="action">Create a Budget
-      <i class="material-icons right">send</i>
-    </button></a>
+  <br>
+  <h3 class = 'white-text'>Budgets</h3>
   <table id="list" class='white-text highlight'>
+    <br>
+    <br>
     <thead>
       <tr>
         <th>User</th>
@@ -42,5 +43,11 @@
       <% } %>
     </tbody>
   </table>
+  <br>
+  <div class = 'add-expense'>
+  <a href="/budgets/new"> <button class="btn waves-effect waves-light pulse" type="submit" name="action">Create a Budget
+    <i class="material-icons right">add</i>
+  </button></a>
+</div>
 </main>
 <%- include('../partials/footer') %>
