@@ -36,7 +36,13 @@ label {
 }
 
 .submitter {
+  color: #1565c0;
+  background-color: whitesmoke
+}
+
+.submitter:hover {
   color: whitesmoke;
+  background-color: #1565c0
 }
 
 .add-expense {
