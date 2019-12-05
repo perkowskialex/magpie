@@ -64,6 +64,7 @@ body {
   width: 8%;
   height: 8%;
   display: flex;
+  background-color: whitesmoke;
 }
 
 a {
