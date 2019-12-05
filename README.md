@@ -23,10 +23,13 @@ Login with your Google account.
 ### Viewing your Expenses
 ![Image](https://i.imgur.com/Jpdkk0r.png)
 
-## Adding an Expense
+### Adding an Expense
 ![Image](https://i.imgur.com/3NK3nHZ.png)
 
-## Show an Individual Expense
+### Show an Individual Expense
 ![Image](https://i.imgur.com/J2FWOxu.png)
 
 ## Next Steps:
+* Reports
+* Add Visualization of Expenses - Chart
+* Add Teams 
