@@ -1,12 +1,15 @@
 <%- include('../partials/header') %>
-
-<main>
-    <form id="new-form" action="/budgets" method="POST">
-        <label>Budget Name:</label>
-        <input type="text" name="budgetName"><br>
-        <label>Income:</label>
-        <input type="number" name="income"><br>
-        <input type="submit" value="Create Budget">
+<br>
+<h3 class = 'blue-text text-darken-3'>New Budget</h3>
+<main class = 'center-form'>
+    <form id="new-form" class = 'new-expense-form' action="/budgets" method="POST">
+        <div class = 'form-items'>
+        <label>Budget Name:
+        <input type="text" name="budgetName"></label><br>
+        <label>Income:
+        <input type="number" name="income"></label><br>
+        <input type="submit" class = 'submitter' value="Create Budget">
+    </div>
     </form>
 </main>
 

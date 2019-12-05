@@ -1,17 +1,20 @@
 <%- include('../partials/header') %>
-<main>
-    <form id="new-form"  action="/expenses/<%=expense._id%>?_method=PUT" method="POST">
-        <label>Date:</label>
-        <input type="date" name="date">
+<h3 class = 'blue-text text-darken-3'>Edit Expense</h3> <br>
+
+<main class = 'center-form'>
+    <form id="new-form" class="new-expense-form" action="/expenses/<%=expense._id%>?_method=PUT" method="POST">
+        <div class = 'form-items'>
+        <label>Date:
+        <input type="date" name="date"></label>
         <br>
-        <label>Value:</label>
-        <input type="number" name="value">
+        <label>Value:
+        <input type="number" name="value"></label>
         <br>
-        <label>Location</label>
-        <input type="text" name="location">
+        <label>Location
+        <input type="text" name="location"></label>
         <br>
 
-        <label>Category:</label>
+        <label>Category:
 
         <select class="browser-default" name="category">
             <option value="rent">Rent</option>
@@ -22,10 +25,10 @@
             <option value="health">Healthcare</option>
             <option value="insurance">Insurance</option>
             <option value="misc">Miscellaneous</option>
-        </select><br>
+        </select></label><br>
         <br>
 
-        <label>Method:</label>
+        <label>Method:
 
         <select class="browser-default" name="method">
             <option value="cash">Cash</option>
@@ -33,14 +36,15 @@
             <option value="debit">Debit</option>
             <option value="electronic">Electronic</option>
             <option value="check">Check</option>
-        </select>
+        </select></label>
         <br>
 
-        <label>Description:</label>
-        <input type="text" name="description">
+        <label>Description:
+        <input type="text" name="description"></label>
         <br>
-        <input class="submitter" type="submit" value="Add Expense">
+        <input class="submitter" type="submit" value="Update Expense">
         <br>
+    </div>
     </form>
 </main>
 
